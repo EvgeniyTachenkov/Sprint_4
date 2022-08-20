@@ -12,77 +12,78 @@ public class HomePageTest extends Constans {
         WebDriver driver = new ChromeDriver();
 
         @Before
-        public void goOver(){
+        public void goOrder(){
             driver.get(LINK_YANDEX);
             driver.findElement(By.id("rcc-confirm-button")).click();
         }
 
         @Test
-        public void testOneQuestions(){
+        public void testFaqQuestionPrice(){
             HomePage homePage = new HomePage(driver);
             homePage.waitLoadPage();
-            String text = homePage.getTextOneQuestion();
-            Assert.assertEquals(ONE_ANSWER, text);
+            String text = homePage.getTextFaqQuestionPrice();
+            Assert.assertEquals(FAQ_ANSWER_PRICE, text);
         }
 
         @Test
-        public void testTwoQuestions(){
+        public void testFaqQuestionMoreScooter(){
             HomePage homePage = new HomePage(driver);
             homePage.waitLoadPage();
-            String text = homePage.getTextTwoQuestion();
-            Assert.assertEquals(TWO_ANSWER, text);
+            String text = homePage.getTextFaqQuestionMoreScooter();
+            Assert.assertEquals(FAQ_ANSWER_MORE_SCOOTER, text);
         }
 
         @Test
-        public void testThreeQuestion(){
+        public void testFaqQuestionRentTime(){
             HomePage homePage = new HomePage(driver);
             homePage.waitLoadPage();
-            String text = homePage.getTextThreeQuestion();
-            Assert.assertEquals(THREE_ANSWER, text);
+            String text = homePage.getTextFaqQuestionRentTime();
+            Assert.assertEquals(FAQ_ANSWER_RENT_TIME, text);
         }
 
         @Test
-        public void testFourQuestion(){
+        public void testFaqQuestionScooterToday(){
             HomePage homePage = new HomePage(driver);
             homePage.waitLoadPage();
-            String text = homePage.getTextFourQuestion();
-            Assert.assertEquals(FOUR_ANSWER, text);
+            String text = homePage.getTextFaqQuestionScooterToday();
+            Assert.assertEquals(FAQ_ANSWER_SCOOTER_TODAY, text);
         }
 
         @Test
-        public void testFiveQuestion(){
+        public void testFaqQuestionExtendOrder(){
             HomePage homePage = new HomePage(driver);
             homePage.waitLoadPage();
-            String text = homePage.getTextFiveQuestion();
-            Assert.assertEquals(FIVE_ANSWER, text);
+            String text = homePage.getTextFaqQuestionExtendOrder();
+            Assert.assertEquals(FAQ_ANSWER_EXTEND_ORDER, text);
         }
 
         @Test
-        public void testSixQuestion(){
+        public void testFaqQuestionCharging(){
             HomePage homePage = new HomePage(driver);
             homePage.waitLoadPage();
-            String text = homePage.getTextSixQuestion();
-            Assert.assertEquals(SIX_ANSWER, text);
+            String text = homePage.getTextFaqQuestionCharging();
+            Assert.assertEquals(FAQ_ANSWER_CHARGING, text);
         }
 
         @Test
-        public void  testSevenQuestion(){
+        public void  testFaqQuestionCancelOrder(){
             HomePage homePage = new HomePage(driver);
             homePage.waitLoadPage();
-            String text = homePage.getTextSevenQuestions();
-            Assert.assertEquals(SEVEN_ANSWER, text);
+            String text = homePage.getTextFaqQuestionCancelOrder();
+            Assert.assertEquals(FAQ_ANSWER_CANCEL_ORDER, text);
         }
 
         @Test
-        public void testEightQuestion(){
+        public void testFaqQuestionMkad(){
             HomePage homePage = new HomePage(driver);
             homePage.waitLoadPage();
-            String text = homePage.getTextEightQuestion();
-            Assert.assertEquals(EIGHT_ANSWER, text);
+            String text = homePage.getTextFaqQuestionMkad();
+            Assert.assertEquals(FAQ_ANSWER_MKAD, text);
         }
 
         @After
         public void teardown() {
+
             driver.quit();
         }
     }

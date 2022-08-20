@@ -1,12 +1,13 @@
-package Page;
+package page;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class NextPages {
+public class OrderPage {
     static WebDriver driver;
-    private static final By buttonOneOrder = By.className("Button_Button__ra12g");
-    private final By secondButtonOrder = By.xpath("//button[contains(@class,'Button_Middle__1CSJM')]");
+    private static final By buttonOrderSmall = By.className("Button_Button__ra12g");
+
+    private final By buttonOrderMiddle = By.xpath("//button[contains(@class,'Button_Middle__1CSJM') and (text() = 'Заказать')]");
     private static final By nameField = By.xpath("//input[@placeholder = '* Имя']");
     private static final By surnameField = By.xpath(".//input[@placeholder = '* Фамилия']");
     private static final By addressField = By.xpath(".//input[@placeholder = '* Адрес: куда привезти заказ']");
@@ -25,22 +26,27 @@ public class NextPages {
     private static final By viewWindow = By.xpath("//button[text()='Посмотреть статус']");
 
     public NextPages(WebDriver driver) {
+
         this.driver = driver;
     }
 
-    public static void clickFirstButtonOneOrder() {
-        driver.findElement(buttonOneOrder).click();
+    public static void clickFirstButtonOrderSmall() {
+
+        driver.findElement(buttonOrderSmall).click();
     }
 
-    public void clickSecondButtonOrder() {
-        driver.findElement(secondButtonOrder).click();
+    public void clickSecondButtonOrderBig() {
+
+        driver.findElement(buttonOrderBig).click();
     }
 
     public static void setName(String name) {
+
         driver.findElement(nameField).sendKeys(name);
     }
 
     public static void setSurname(String surname) {
+
         driver.findElement(surnameField).sendKeys(surname);
     }
 
